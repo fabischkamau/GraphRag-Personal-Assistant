@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color scheme */
+  --color-navy-950: #0a1128;
+  --color-navy-900: #121b30;
+  --color-teal-500: #00e5ff;
+  --color-purple-500: #7b42f6;
+  --color-white-50: #f5f5f7;
+  --color-gray-300: #b8b8d1;
+
+  /* Font families */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Border radius */
+  --radius-full: 9999px;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+
+  /* Animation */
+  --animation-pulse: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-navy-950);
+    color: var(--color-white-50);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-navy-950);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-teal-500);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-purple-500);
+  }
+}
+
+@layer utilities {
+  .bg-gradient-primary {
+    background: linear-gradient(
+      to right,
+      var(--color-purple-500),
+      var(--color-teal-500)
+    );
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(
+      to right,
+      var(--color-purple-500),
+      var(--color-teal-500)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .border-accent {
+    border-color: color-mix(in srgb, var(--color-teal-500), transparent 80%);
+  }
+}
+
+/* Animation for new messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flex-1.overflow-y-auto > div {
+  animation: fadeIn 0.3s ease-out forwards;
+}

@@ -1,0 +1,19 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment directories
+.venv/
+venv/
+ENV/
+
+# Environment files
+.env
+.env.*
+
+# Project specific folders
+ragtest/
+
+# Log files
+uagents_core.log
