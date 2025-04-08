@@ -70,14 +70,14 @@ A sophisticated system leveraging Graph-based Retrieval Augmented Generation (Gr
 1. **Clone Repository**
 
    ```bash
-   git clone https://github.com/your-username/graphrag-neo4j-assistant.git
-   cd graphrag-neo4j-assistant
+   https://github.com/fabischkamau/GraphRag-Personal-Assistant.git
+   cd GraphRag-Personal-Assistant
    ```
 
 2. **Install Frontend Dependencies**
 
    ```bash
-   cd frontend
+   cd ui
    npm install
    ```
 
@@ -167,7 +167,7 @@ embeddings = OpenAIEmbeddings(
    ```
 
 3. **Access Interface**  
-   Open `http://localhost:3000` in your browser
+   Open `http://localhost:5173` in your browser
 
 ## Configuration Guide
 
@@ -180,7 +180,7 @@ embeddings = OpenAIEmbeddings(
    FOR (n:__Chunk__)
    ON (n.embedding)
    OPTIONS {indexConfig: {
-     `vector.dimensions`: 1536,
+     `vector.dimensions`: 3072,
      `vector.similarity_function`: 'cosine'
    }}
    ```
